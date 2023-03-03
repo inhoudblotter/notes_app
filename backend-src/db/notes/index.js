@@ -23,12 +23,12 @@ async function createNote(db, user, title, text) {
 
 function createBlankNote(db, user) {
   const link = process.env.HOST;
-  const imgLink = `${process.env.HOST}/img/blank-img.png`;
+  const imgLink = process.env.HOST + '/img/blank-img.png';
   return createNote(
     db,
     user,
     "Новая заметка",
-    `# Заголовок 1\n## Заголовок 2\n### Заголовок 3\n#### Заголовок 4\n\nТекст\n\n**Жирный текст**\n\n*Курсив*\n\n> Цитата\n\nМаркированный список\n\n* Пункт\n* Пункт\n\n\nНумерованный список\n\n1. Пункт\n2. Пункт\n\n[Сcылка](${link})\n\n![Картинка ](${imgLink})`
+    `# Заголовок 1\n## Заголовок 2\n### Заголовок 3\n#### Заголовок 4\n\nТекст\n\n**Жирный текст**\n\n*Курсив*\n\n> Цитата\n\nМаркированный список\n\n* Пункт\n* Пункт\n\n\nНумерованный список\n\n1. Пункт\n2. Пункт\n\n[Сcылка](${link})\n\n![Картинка](${imgLink})`
   );
 }
 
