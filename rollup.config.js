@@ -25,7 +25,7 @@ module.exports = {
       },
     }),
 
-    css({ output: "bundle.css" }),
+    css({ output: path.join(__dirname, "bundle.css" )}),
 
     babel({
       extensions: [".js", ".mjs", ".svelte"],
