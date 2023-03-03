@@ -76,6 +76,6 @@ export const deleteAllArchived = () => {
   });
 };
 
-export const notePdfUrl = (id) => {
-  return `${PREFIX + '/' + id + '?pdf=true'}`
-};
+// export const notePdfUrl = (id) => {
+//   return `${PREFIX + '/' + id + '?pdf=true'}`
+// };

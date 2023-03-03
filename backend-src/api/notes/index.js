@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const auth = require("../../utils/express/auth");
-const markdownpdf = require('markdown-pdf');
+// const markdownpdf = require('markdown-pdf');
 const { createNote, getNotes, getNote, deleteNote, deleteAllArchived, updateNote } = require("../../db");
 const router = Router();
 router.use(auth);
@@ -26,15 +26,15 @@ router.post("/note", async (req, res) => {
 // getNote
 router.get("/:id", async (req, res) => {
   const { id } = req.params;
-  const {pdf} = req.query;
+  // const {pdf} = req.query;
   const note = await getNote(req.db, req.user.id, id);
   if (note.error) {
     return res.status(note.error.code === 404 ? note.error.code : 500).send(note.error.message);
   }
-  if (!pdf) return res.json(note);
-   markdownpdf().from.string(note.text).to.buffer((error, pdf) => {
-    res.contentType('application/pdf').send(pdf);
-   });
+  // if (!pdf) return res.json(note);
+  //  markdownpdf().from.string(note.text).to.buffer((error, pdf) => {
+  //   res.contentType('application/pdf').send(pdf);
+  //  });
 });
 
 // deleteNote
