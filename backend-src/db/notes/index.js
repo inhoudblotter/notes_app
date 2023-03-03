@@ -23,7 +23,7 @@ async function createNote(db, user, title, text) {
 
 function createBlankNote(db, user) {
   const link = process.env.HOST;
-  const imgLink = `${process.env.HOST}img/blank-img.png`;
+  const imgLink = `${process.env.HOST}/img/blank-img.png`;
   return createNote(
     db,
     user,
