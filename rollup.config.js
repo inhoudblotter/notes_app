@@ -7,16 +7,16 @@ const { babel } = require("@rollup/plugin-babel");
 const livereload = require("rollup-plugin-livereload");
 const { terser } = require("rollup-plugin-terser");
 const css = require("rollup-plugin-css-only");
-
+const path = require('path');
 const production = !process.env.ROLLUP_WATCH;
 
 module.exports = {
-  input: "frontend-src/main.js",
+  input: path.join(__dirname, "frontend-src/main.js"),
   output: {
     sourcemap: true,
     format: "iife",
     name: "app",
-    file: "public/bundle.js",
+    file: path.join(__dirname, "public/bundle.js"),
   },
   plugins: [
     svelte({
