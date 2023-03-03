@@ -31,7 +31,7 @@ router.get("/:id", async (req, res) => {
   if (note.error) {
     return res.status(note.error.code === 404 ? note.error.code : 500).send(note.error.message);
   }
-  // if (!pdf) return res.json(note);
+  return res.json(note);
   //  markdownpdf().from.string(note.text).to.buffer((error, pdf) => {
   //   res.contentType('application/pdf').send(pdf);
   //  });
